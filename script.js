@@ -15,6 +15,7 @@ function addEntry(date, company, title, bullets){
 	
 	var td = document.createElement('td');	
 	td.setAttribute('rowspan', '3');
+	td.setAttribute('class', 'experience-date');
 	td.innerHTML = date;
 	tr.appendChild(td);
 	
@@ -43,4 +44,5 @@ function addEntry(date, company, title, bullets){
 	table.appendChild(tr);
 	
 	experience.appendChild(table);	
+	experience.innerHTML += "<br />";
 }
