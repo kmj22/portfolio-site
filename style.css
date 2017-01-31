@@ -1,5 +1,19 @@
+body{
+	background-color: 003B20;
+	color:75B095;
+}
+
+#page{
+	max-width: 800px;
+	background-color: 0F5837;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0px 15px;
+}
+
 h1{
 	float:left;
+	color: #BCE498;
 }
 
 #navbar ul {
@@ -13,31 +27,57 @@ h1{
 
 #navbar li {
     float: left;
+	background-color: #123752;
+	margin: 2px;
+	border: 2px solid black;
 }
 
 #navbar li a {
     display: block;
-   
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+	color:708EA4;
 }
 
 #navbar li a:hover {
-    background-color: #111;
+    background-color: #708EA4;
+	color: #123752
 }
 
 #content{
 	clear:right;
 	clear:left;
+	
+
 }
 
 table, th, td {
-	border: 1px solid black;
+	border: 2px solid black;
 	border-collapse: collapse;
 	padding: 10px;
+	width: 750px;
 }
 
 .experience-date{
-	background-color: white;
+	background-color: #708EA4;
+	color: 032137;
+	width: 100px;	
+}
+
+.experience-company{
+	background-color: #75B095;
+	font-size: 14pt;
+	color: 003B20;
+}
+
+.experience-title{
+	background-color: #75B095;
+	font-size: 14pt;
+	color: 003B20;
+}
+
+.experience-description{
+	background-color: #75B095;
+	color: 003B20;
 }

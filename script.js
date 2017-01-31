@@ -21,12 +21,14 @@ function addEntry(date, company, title, bullets){
 	
 	var td = document.createElement('td');	
 	td.innerHTML = "<b>" + company + "</b>";
+	td.setAttribute('class', 'experience-company');
 	tr.appendChild(td);
 	
 	table.appendChild(tr);
 	
 	var tr = document.createElement('tr');
-	var td = document.createElement('td');	
+	var td = document.createElement('td');
+	td.setAttribute('class', 'experience-title');	
 	td.innerHTML = title;
 	tr.appendChild(td);
 	
@@ -39,6 +41,7 @@ function addEntry(date, company, title, bullets){
 		td.innerHTML += "<li>" + bullets[i] + "</li>";
 	}
 	td.innerHTML += "</ul>";
+	td.setAttribute('class', 'experience-description');
 	tr.appendChild(td);
 	
 	table.appendChild(tr);
