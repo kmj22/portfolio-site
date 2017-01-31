@@ -7,6 +7,8 @@ document.getElementById("navbar").innerHTML =
 		</ul>
 		`;
 		
+document.getElementsByTagName("head")[0].innerHTML += '<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Droid+Sans">';
+		
 function addEntry(date, company, title, bullets){
 	var table = document.createElement('table');
 	table.setAttribute('border', '1');
