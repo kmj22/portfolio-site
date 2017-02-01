@@ -1,7 +1,7 @@
 body{
 	background-color: 003B20;
-	color:75B095;
-	 font-family: 'Droid Sans', sans-serif;
+	color: #75B095;
+	font-family: 'Droid Sans', sans-serif;
 }
 
 #page{
@@ -15,6 +15,14 @@ body{
 h1{
 	float:left;
 	color: #BCE498;
+}
+
+h2{
+	color: #8CBE5F;
+}
+
+a:visited{
+	color: #75B095;
 }
 
 #navbar ul {
@@ -49,8 +57,6 @@ h1{
 #content{
 	clear:right;
 	clear:left;
-	
-
 }
 
 table, th, td {
@@ -64,6 +70,7 @@ table, th, td {
 	background-color: #708EA4;
 	color: 032137;
 	width: 100px;	
+	text-align: center;
 }
 
 .experience-company{
@@ -81,4 +88,27 @@ table, th, td {
 .experience-description{
 	background-color: #75B095;
 	color: 003B20;
+}
+
+.experience-description a{
+	color: 003B20;
+}
+
+.float-left{
+	float:left;
+}
+
+.float-right{
+	float:right;
+}
+
+.clear{
+	clear:both;
+}
+
+#my-photo{
+	height:200;
+	width:200;
+	border:2px solid black;
+	margin:15px;
 }

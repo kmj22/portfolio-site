@@ -38,11 +38,16 @@ function addEntry(date, company, title, bullets){
 	
 	var tr = document.createElement('tr');
 	var td = document.createElement('td');	
-	td.innerHTML = "<ul>";
-	for (var i = 0; i < bullets.length; i++){
-		td.innerHTML += "<li>" + bullets[i] + "</li>";
+	if (typeof(bullets) == 'string'){
+		td.innerHTML = bullets;
 	}
-	td.innerHTML += "</ul>";
+	else{
+		td.innerHTML = "<ul>";
+		for (var i = 0; i < bullets.length; i++){
+			td.innerHTML += "<li>" + bullets[i] + "</li>";
+		}
+		td.innerHTML += "</ul>";
+	}
 	td.setAttribute('class', 'experience-description');
 	tr.appendChild(td);
 	
