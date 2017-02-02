@@ -57,7 +57,7 @@ a:visited{
 	color: #123752
 }
 
-#navbar li a #current-link { 
+#navbar #current-link { 
     background-color: #708EA4;
 	color: #123752
 }
@@ -71,20 +71,18 @@ table, th, td {
 
 .experience-date{
 	background-color: #708EA4;
-	color: 032137;
+	color: #032137;
 	width: 100px;	
 	text-align: center;
 }
 
-.experience-company, .experience-title {
+.experience-description, .experience-company, .experience-title{
 	background-color: #75B095;
-	font-size: 14pt;
-	color: 003B20;
+	color: #003B20;
 }
 
-.experience-description{
-	background-color: #75B095;
-	color: 003B20;
+.experience-company, .experience-title {
+	font-size: 14pt;
 }
 
 .experience-description a, .experience-title a{

@@ -1,13 +1,36 @@
-document.getElementById("navbar").innerHTML =
- `		<ul>
-		<li><a href="/~kmj22/personal/">Home
-		<li><a href="/~kmj22/personal/experience">Experience</a>
-		<li><a href="/~kmj22/personal/projects">Sample Projects</a>
-		<li><a href="/~kmj22/personal/game">Game Design</a>
-		</ul>
-		`;
+/* NavBar Setup */
+var list = document.createElement('ul');
+
+var urls = ["https://web.njit.edu/~kmj22/personal/",
+			"https://web.njit.edu/~kmj22/personal/experience/",
+			"https://web.njit.edu/~kmj22/personal/projects/",
+			"https://web.njit.edu/~kmj22/personal/game/"];
+var names = ["Home", 
+			"Experience", 
+			"Sample Projects", 
+			"Game Design"];			
+
+for (var i = 0; i < urls.length; i++){
+	var url = urls[i];
+	var name = names[i];
+	
+	var item = document.createElement('li');
+	var a = document.createElement("a");
+	
+	a.innerHTML = name;
+	
+	if (url == document.URL){
+		a.id = 'current-link';
+	}
+	else{
+		a.setAttribute('href', url);
+	}
+	
+	item.appendChild(a);
+	list.appendChild(item);
+	navbar.appendChild(list);
+}
 		
-//document.getElementsByTagName("head")[0].innerHTML += '<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Droid+Sans">';
 		
 function addEntry(date, company, title, bullets){
 	var table = document.createElement('table');
