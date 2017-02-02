@@ -32,7 +32,7 @@ a:visited{
 #navbar ul {
 	float:right;
     list-style-type: none;
-    margin: 0;
+    margin-top: 10px;
     padding: 0;
     overflow: hidden;   
 }
@@ -57,9 +57,9 @@ a:visited{
 	color: #123752
 }
 
-#content{
-	clear:right;
-	clear:left;
+#navbar li a #current-link { 
+    background-color: #708EA4;
+	color: #123752
 }
 
 table, th, td {
@@ -89,6 +89,13 @@ table, th, td {
 
 .experience-description a, .experience-title a{
 	color: 003B20;
+}
+
+.experience-description li {
+    list-style-type: disc;
+    list-style-position: inside;
+    text-indent: -2em;
+    padding-left: 2em;
 }
 
 .float-left{
