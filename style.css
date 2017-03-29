@@ -3,14 +3,15 @@ html {
 }
 
 body{
-	background-color: 003B20;
-	color: #75B095;
+	background-color: #34495E;
+	color: #34495E;
 	font-family: 'Droid Sans', sans-serif;
 }
 
 #page{
+	border: 2px solid #8A949B;
 	max-width: 800px;
-	background-color: 0F5837;
+	background-color: #F2F4F4;
 	margin:auto;
 	padding: 0px 15px;
 	display:block;
@@ -18,15 +19,15 @@ body{
 
 h1{
 	float:left;
-	color: #BCE498;
+	color: #2F6690;
 }
 
 h2{
-	color: #8CBE5F;
+	color: #C4566A;
 }
 
-a:visited{
-	color: #75B095;
+a, a:visited{
+	color: #34495E;
 }
 
 #navbar ul {
@@ -39,7 +40,7 @@ a:visited{
 
 #navbar li {
     float: left;
-	background-color: #123752;
+	background-color: #5B6872;
 	margin: 2px;
 	border: 2px solid black;
 }
@@ -49,17 +50,17 @@ a:visited{
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-	color:708EA4;
+	color: #FAFAFA;
 }
 
 #navbar li a:hover {
-    background-color: #708EA4;
-	color: #123752
+    background-color: #5299D3;
+	color: #FAFAFA
 }
 
 #navbar #current-link { 
-    background-color: #708EA4;
-	color: #123752
+    background-color: #5299D3;
+	color: #FAFAFA
 }
 
 table, th, td {
@@ -70,15 +71,15 @@ table, th, td {
 }
 
 .experience-date{
-	background-color: #708EA4;
-	color: #032137;
+	background-color: #C4566A;
+	color: #FAFAFA;
 	width: 100px;	
 	text-align: center;
 }
 
 .experience-description, .experience-company, .experience-title{
-	background-color: #75B095;
-	color: #003B20;
+	background-color: #FAFAFA;
+	
 }
 
 .experience-company, .experience-title {
@@ -86,7 +87,7 @@ table, th, td {
 }
 
 .experience-description a, .experience-title a{
-	color: 003B20;
+	color: #34495E;
 }
 
 .experience-description li {

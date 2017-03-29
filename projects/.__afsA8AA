@@ -18,11 +18,11 @@
 	<script>
 		addEntry("Spring 2017",
 				 "Web Crawler",
-				 '<a href="https://github.com/kmj22/crawler">https://github.com/kmj22/crawler</a>',
+				 '',
 				 "This is a simple web crawler made in Python.  Given a list of Wikipedia seed urls and terms to look for, it will crawl Wikipedia for relevant pages and download them.");
 		addEntry("Spring 2017",
 				 "Indexer",
-				 '<a href="https://github.com/kmj22/indexer">https://github.com/kmj22/indexer</a>',
+				 '',
 				 "This is a Python program that takes the output of the above Web Crawler as input.  Downloaded documents are parsed, tokenized, and put into an inverted index which is saved to a file.  This program supports both frequency-based and position-based indexes.  They keep track of number of word occurences and position of word occurences in documents, respectively.");
 		addEntry("Spring 2017",
 				 "Portfolio Website",
