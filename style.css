@@ -116,16 +116,19 @@ table, th, td {
 	margin:15px;
 }
 
-#screenshots img{
+.screenshots img{
 	display:block;
 	margin:auto;
 	border: 2px solid black;
-	width:515;
-	height:375;
 }
 
-#screenshots p{
+.screenshots p{
 	display:block;
 	margin:auto;
 	width: 50%;
+}
+
+#personal_screenshot img{
+	width:515;
+	height:375;
 }
