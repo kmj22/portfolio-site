@@ -23,6 +23,9 @@ var names = ["Home",
 			"Sample Projects", 
 			"Game Design"];			
 
+// grab the end of the url to compare with relative paths
+var currentURL = document.URL.split('/').pop();			
+			
 for (var i = 0; i < urls.length; i++){
 	var url = urls[i];
 	var name = names[i];
@@ -32,7 +35,7 @@ for (var i = 0; i < urls.length; i++){
 	
 	a.innerHTML = name;
 	
-	if (url == document.URL){
+	if (url == currentURL){
 		item.setAttribute('class', 'active');
 	}
 	else{
