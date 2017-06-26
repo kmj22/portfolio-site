@@ -13,7 +13,7 @@ nav.innerHTML = `
 
 var list = document.getElementById('url-list');
 
-var urls = ["",
+var urls = ["/",
 			"experience.html",
 			"projects.html",
 			"game.html"];
