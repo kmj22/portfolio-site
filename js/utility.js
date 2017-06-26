@@ -13,7 +13,7 @@ nav.innerHTML = `
 
 var list = document.getElementById('url-list');
 
-var urls = ["/",
+var urls = ["index.html",
 			"experience.html",
 			"projects.html",
 			"game.html"];
@@ -22,7 +22,8 @@ var names = ["Home",
 			"Experience", 
 			"Sample Projects", 
 			"Game Design"];			
-
+		
+			
 // grab the end of the url to compare with relative paths
 var currentURL = document.URL.split('/').pop();			
 			
@@ -35,7 +36,7 @@ for (var i = 0; i < urls.length; i++){
 	
 	a.innerHTML = name;
 	
-	if (url == currentURL){
+	if (url == currentURL || (url == "index.html" && currentURL == "")){
 		item.setAttribute('class', 'active');
 	}
 	else{
