@@ -13,10 +13,10 @@ nav.innerHTML = `
 
 var list = document.getElementById('url-list');
 
-var urls = ["https://web.njit.edu/~kmj22/personal/",
-			"https://web.njit.edu/~kmj22/personal/experience.html",
-			"https://web.njit.edu/~kmj22/personal/projects.html",
-			"https://web.njit.edu/~kmj22/personal/game.html"];
+var urls = ["index.html",
+			"experience.html",
+			"projects.html",
+			"game.html"];
 
 var names = ["Home", 
 			"Experience", 
