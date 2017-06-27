@@ -16,67 +16,59 @@
 <body>
 	<div id="nav"></div>
 
-	<div id="page">	
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-6">
-					<img id="my-photo" src="img/me.jpg">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="panel">
+					<img src="img/me.jpg" class="img-responsive img-rounded"><br />
+					<p>Landing, NJ</p>
+					<p>kmj22@njit.edu</p>
+					<p>(973) 234-3176</p>	
+					<p><a href="http://www.linkedin.com/in/94j39ab26788a6">LinkedIn</a><br /></p>
+					<p><a href="https://github.com/kmj22">GitHub</a></p>
+					<hr>
+					
+					<h3>Languages</h3>
+					<p>Java, C, C++, C#, HTML, CSS, JavaScript, PHP, SQL, Python, Bash, ABAP, VisualBasic, GameMaker Language</p>
+					
+					<h3>Frameworks and Libraries</h3>
+					<p>jQuery, Bootstrap, Angular</p>
+					
+					<h3>Technologies</h3>
+					<p>Windows, Linux, Git, AJAX, JSON, SAP, Visual Studio, NetBeans, Game Maker Studio, Microsoft Office, Adobe Creative Suite, AutoCAD</p>		
 				</div>
-				
-				<div class="col-sm-6">
-					<h2>Contact</h2>
-					<p>
-					Email: kmj22@njit.edu <br />
-					<a href="http://www.linkedin.com/in/94j39ab26788a6">LinkedIn</a><br />
-					<a href="https://github.com/kmj22">GitHub</a>
-					</p>
+			
+				<div class="panel">
 					<h2>Education</h2>
-					<p>New Jersey Institute of Technology<br />
-					Bachelor of Science in Computer Science<br />
-					Minor in Web and Information Systems</p>
-				</div>
+					
+					<h4>New Jersey Institute of Technology</h4>
+					<h5>September 2013-May 2017</h5>
+					<p>Bachelor's of Science in Computer Science</p>
+					<p>Minor in Web and Information Systems</p>
+				</div>	
 			</div>
+			
+			<div class="col-sm-8">
+				<div class="panel">
+					<h2>About Me</h2><br />
+					
+					
+					
+					
+					<p>Hi!  I'm Kevyn Jaremko- a 22 year old, recent college graduate with a Bachelor's in Computer Science and a minor in Web and Information Systems.  I've created this site as a portfolio to showcase my experience and the projects I've worked on.  A big hobby of mine is game design, which is what originally fostered my interest in programming.</p>
 
-			<div class="row">
-				<div class="col-sm-6">
-					<h2>Languages</h2>
-					<ul>
-						<li>Java</li>
-						<li>C</li>
-						<li>C++</li>
-						<li>C#</li>
-						<li>HTML</li>
-						<li>CSS</li>
-						<li>JavaScript (jQuery, Bootstrap, Angular)</li>
-						<li>PHP</li>
-						<li>SQL</li>
-						<li>Python</li>
-						<li>ABAP</li>
-						<li>Bash</li>
-						<li>VisualBasic</li>
-						<li>GameMaker Language</li>
-					</ul>
+					<p>When I was in middle school, I became fascinated with the idea of creating my own video game.  I had no programming experience, but I found a tool online called Game Maker. The program had a drag-and-drop interface to help non-programmers get started, but every command had a "Game Maker Language" equivalent. Once the user was comfortable, they could shift the project entirely to code. This is how I began to inadvertently learn some of the fundamentals of programming.</p>	
+
+					<p>In high school, I took a Computer Science elective and found that I recognized a lot of the core concepts.  I enjoyed applying the knowledge I had gained on my own, and I soon fell in love with the problem-solving, puzzle-like nature of programming.  This is what ultimately led to my decision to major in Computer Science.</p>	
 				</div>
-				<div class="col-sm-6">
-					<h2>Technologies</h2>
-					<ul>
-						<li>Windows</li>
-						<li>Linux</li>
-						<li>Git</li>
-						<li>AJAX</li>
-						<li>JSON</li>
-						<li>SAP</li>
-						<li>Visual Studio</li>
-						<li>NetBeans</li>
-						<li>Game Maker Studio</li>
-						<li>MATLAB</li>
-						<li>Microsoft Office</li>
-						<li>Adobe Creative Suite</li>
-						<li>AutoCAD</li>
-					</ul>
-				</div>
-			</div>		
-		</div>
+
+				<div class="panel">
+					<h2>Experience</h2><br />
+					
+					<div id="experience-container"></div>				
+				</div>						
+			</div>
+		</div>	
 	</div>
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -85,6 +77,42 @@
 	<script src="js/bootstrap.min.js"></script>
 	<!-- Nav bar and other utility functions -->
 	<script src="js/utility.js"></script>
+	
+	<script>
+	var experience = [
+		{
+			name: "Professor C. Ochs, NJIT",
+			title: "Research Assistant for Independent Study",
+			date: "September-December 2016",
+			work: "Evaluated and modified application for deriving and visualizing medical ontologies. Refactored and updated software for compatibility with newest OWL API."	
+		},
+		{
+			name: "Astrodyne TDI",
+			title: "Software Development Intern",
+			date: "June-August 2016",	
+			work: "Conceptualized and developed company software to report product details. Renovated and modernized legacy applications using Visual C#."
+		},
+		{
+			name: "Professor M. Nakayama, NJIT",
+			title: "Teaching Assistant for Foundations of Computer Science II",
+			date: "January-May 2016",	
+			work: "Evaluated and provided feedback for models of computation projects.  Proctored and scored midterm and final exam."
+		},
+		{
+			name: "Colgate Palmolive",
+			title: "Global Information Technology Intern",
+			date: "June 2015-January 2016",	
+			work: "Researched and designed program to automate balance sheet loading process.  Created and collaborated in ABAP programs to report data from multiple SAP systems."
+		},
+		{
+			name: "LS Engineering Associates Corporation",
+			title: "Intern",
+			date: "May-August 2014",	
+			work: "Maintained and updated company website.  Learned and worked extensively with AutoCAD."
+		}];
+		
+	addExperience(experience);
+	</script>
 
 </body>
 </html>

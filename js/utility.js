@@ -1,32 +1,36 @@
 /* NavBar Setup */
 var nav = document.getElementById('nav');
 nav.innerHTML = `	
-	<nav class="navbar navbar-default">
+	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">Kevyn Jaremko</a>
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#links" id="small-menu">
+				</button>
+			
+				<a class="navbar-brand">Kevyn Jaremko</a>
 			</div>
-			<ul id="url-list" class="nav navbar-nav navbar-right">
-			</ul>
+			<div class="collapse navbar-collapse" id="links">
+				<ul id="url-list" class="nav navbar-nav navbar-right">
+				</ul>
+			</div>
 		</div>
-	</nav>`
+	</nav>`;
 
 var list = document.getElementById('url-list');
+var smallMenu = document.getElementById('small-menu');
 
 var urls = ["index.html",
-			"experience.html",
 			"projects.html",
 			"game.html"];
 
-var names = ["Home", 
-			"Experience", 
+var names = ["About Me", 
 			"Sample Projects", 
 			"Game Design"];			
-		
 			
-// grab the end of the url to compare with relative paths
+// grab the end of current url to compare with urls array
 var currentURL = document.URL.split('/').pop();			
-			
+
+// add each url to the navbar with its corresponding title			
 for (var i = 0; i < urls.length; i++){
 	var url = urls[i];
 	var name = names[i];
@@ -36,6 +40,7 @@ for (var i = 0; i < urls.length; i++){
 	
 	a.innerHTML = name;
 	
+	// mark the current page link as active
 	if (url == currentURL || (url == "index.html" && currentURL == "")){
 		item.setAttribute('class', 'active');
 	}
@@ -43,92 +48,77 @@ for (var i = 0; i < urls.length; i++){
 		a.setAttribute('href', url);
 	}
 	
+	// add link to list item, then add list item to the list
 	item.appendChild(a);
 	list.appendChild(item);
+	
+	// create empty span for small bootstrap hamburger menu
+	smallMenu.innerHTML += '<span class="icon-bar"></span>';
 }
-		
-		
-function addEntry(date, company, title, description){
-	var bullets;
-	
-	if (typeof(description) == 'string'){
-		bullets = description;
-	}
-	else{
-		bullets = "<ul>";
-		for (var i = 0; i < description.length; i++){
-			bullets += "<li>" + description[i] + "</li>";
-		}
-		bullets += "</ul>";
-	}
-	
-	var container = document.createElement('div');
-	container.setAttribute('class', 'container');
+
+// Given an array of project objects
+// Display each project in a uniform format		
+function addProjects(projects){
+	var projectContainer = document.getElementById('project-container');
 	
 	var row = document.createElement('div');
-	row.setAttribute('class', 'row');
-	container.appendChild(row);
+	row.setAttribute('class','row');
+	projectContainer.appendChild(row);
 	
-	var col = document.createElement('div');
-	col.setAttribute('class', 'col-sm-5');
-	col.innerHTML += "<h2>" + company + "</h2>";
-	col.innerHTML += "<h3>" + date + "</h3>";
-	row.appendChild(col);
+	// number of projects that can be displayed in a row, 1-12
+	var projectsPerRow = 2;
 	
-	var col = document.createElement('div');
-	col.setAttribute('class', 'col-sm-7');
-	col.innerHTML += "<br /><h4>" + title + "</h4>";
-	col.innerHTML += "<p>" + bullets + "</p>";
-	row.appendChild(col);
+	var projectsInRow = 0;
+	var colWidth = 12 / projectsPerRow;
 	
-	experience.appendChild(container);	
-	experience.innerHTML += '<hr>';
-	
-	/*
-	var table = document.createElement('table');
-	table.setAttribute('border', '1');
-	
-	var tr = document.createElement('tr');
-	
-	var td = document.createElement('td');	
-	td.setAttribute('rowspan', '3');
-	td.setAttribute('class', 'experience-date');
-	td.innerHTML = date;
-	tr.appendChild(td);
-	
-	var td = document.createElement('td');	
-	td.innerHTML = "<b>" + company + "</b>";
-	td.setAttribute('class', 'experience-company');
-	tr.appendChild(td);
-	
-	table.appendChild(tr);
-	
-	var tr = document.createElement('tr');
-	var td = document.createElement('td');
-	td.setAttribute('class', 'experience-title');	
-	td.innerHTML = title;
-	tr.appendChild(td);
-	
-	table.appendChild(tr);
-	
-	var tr = document.createElement('tr');
-	var td = document.createElement('td');	
-	if (typeof(bullets) == 'string'){
-		td.innerHTML = bullets;
-	}
-	else{
-		td.innerHTML = "<ul>";
-		for (var i = 0; i < bullets.length; i++){
-			td.innerHTML += "<li>" + bullets[i] + "</li>";
+	for (var i = 0; i < projects.length; i++){
+		var project = projects[i];
+		
+		var html = "<h3><a href='" + project.url + "'>" + project.name + "</a></h3>";
+		html += "<h4>" + project.date + "</h4>";
+		html += "<p>" + project.description + "</p>";
+			
+		var column = document.createElement('div');
+		column.setAttribute('class','col-sm-' + colWidth);
+		
+		var panel = document.createElement('div');
+		panel.setAttribute('class','panel project-panel'); 
+		panel.innerHTML = html;
+		
+		column.appendChild(panel);
+		
+		if (projectsInRow >= projectsPerRow){
+			projectsInRow = 0;
+					
+			row = document.createElement('div');
+			row.setAttribute('class','row');
+			projectContainer.appendChild(row);			
 		}
-		td.innerHTML += "</ul>";
+
+		row.appendChild(column);
+		projectsInRow++;
 	}
-	td.setAttribute('class', 'experience-description');
-	tr.appendChild(td);
+}		
+
+// Given an array of job objects
+// Display each job in a uniform format	
+function addExperience(experience){
+	var experienceContainer = document.getElementById('experience-container');
 	
-	table.appendChild(tr);
+	experience.forEach(function(job){
+		var title = document.createElement('h4');
+		title.innerHTML = job.name + " / " + job.title;
+		
+		var date = document.createElement('h5');
+		date.innerHTML = job.date;
+		
+		var work = document.createElement('p');
+		work.innerHTML = job.work;
+		
+		experienceContainer.appendChild(title);
+		experienceContainer.appendChild(date);
+		experienceContainer.appendChild(work);
+		experienceContainer.innerHTML += '<hr>';	
+	});
+}	
 	
-	experience.appendChild(table);	
-	experience.innerHTML += "<br />";
-	*/
-}

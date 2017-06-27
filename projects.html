@@ -15,43 +15,57 @@
 </head>
 <body>
 	<div id="nav"></div>
+
+	<div class="container" id="project-container"></div>
 	
-	<div id="page">	
-		<div id="experience"></div>
-	</div>
-
-	<script src="js/utility.js"></script>
-	<script>
-		addEntry("Spring 2017",
-				 "Web Crawler",
-				 '<a href="https://github.com/kmj22/crawler">https://github.com/kmj22/crawler</a>',
-				 "This is a simple web crawler made in Python.  Given a list of Wikipedia seed urls and terms to look for, it will crawl Wikipedia for relevant pages and download them.");
-		addEntry("Spring 2017",
-				 "Indexer",
-				 '<a href="https://github.com/kmj22/indexer">https://github.com/kmj22/indexer</a>',
-				 "This is a Python program that takes the output of the above Web Crawler as input.  Downloaded documents are parsed, tokenized, and put into an inverted index which is saved to a file.  This program supports both frequency-based and position-based indexes.  They keep track of number of word occurences and position of word occurences in documents, respectively.");
-		addEntry("Spring 2017",
-				 "Association Rule Mining",
-				 '<a href="https://github.com/kmj22/association-rule-mining">https://github.com/kmj22/association-rule-mining</a>',
-				 "This is a Python program that uses the index generated from the above Indexer as input.  Given a list of terms, this program uses the index to calculate significant levels of association and support between subsets of terms.  For example, my Web Crawler crawled Wikipedia pages relating to video games, and as you might expect, it found that there is a very high probability that the terms \"video\" and \"game\" would appear on the same page.");		
-		addEntry("Spring 2017",
-				 "Portfolio Website",
-				 '<a href="https://github.com/kmj22/portfolio-site">https://github.com/kmj22/portfolio-site</a>',
-				 "This website was made using HTML, CSS, and JavaScript.  It was created as a way to visualize some of the work I have done at NJIT as well as in my spare time.");
-		addEntry("Fall 2016",
-				 "Used Car Lot Website",
-				 '<a href="https://github.com/kmj22/is218-website">https://github.com/kmj22/is218-website</a>',
-				 'This site was created in PHP using an MVC design.  It was made for a web development course.  It allows you to register an account, view cars for sale, look at what cars a specific user is offering, and put your own cars up for sale.  The site can be viewed here: <a href="https://web.njit.edu/~kmj22/is218">https://web.njit.edu/~kmj22/is218</a>');
-		addEntry("Spring 2016",
-				 "Polynomial Representation in Java",
-				 '<a href="https://github.com/kmj22/cs435project">https://github.com/kmj22/cs435project</a>',
-				 "The XYPoly class was made with Java to represent polynomials of the form C*x^i*y^j + C2*x2^i2*y2^j2 + ...  This project implements a data structure to handle addition, subtraction, multiplication, powers, and evaluation of these polynomials.");
-	</script>
-
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="js/bootstrap.min.js"></script>
+	<!-- Nav bar and other utility functions -->
+	<script src="js/utility.js"></script>
+	
+	<script>
+		var projects = [
+		{ 			
+			name : 'Web Crawler',
+			url : 'https://github.com/kmj22/crawler',
+			date : 'Spring 2017',
+			description : 'This is a simple web crawler made in Python.  Given a list of Wikipedia seed urls and terms to look for, it will crawl Wikipedia for relevant pages and download them.'
+		},
+		{ 			
+			name : 'Indexer',
+			url : 'https://github.com/kmj22/indexer',
+			date : 'Spring 2017',
+			description : 'This is a Python program that takes the output of the above Web Crawler as input.  Downloaded documents are parsed, tokenized, and put into an inverted index which is saved to a file.  This program supports both frequency-based and position-based indexes.  They keep track of number of word occurences and position of word occurences in documents, respectively.'
+		},
+		{ 			
+			name : 'Association Rule Mining',
+			url : 'https://github.com/kmj22/association-rule-mining',
+			date : 'Spring 2017',
+			description : 'This is a Python program that uses the index generated from the above Indexer as input.  Given a list of terms, this program uses the index to calculate significant levels of association and support between subsets of terms.  For example, my Web Crawler crawled Wikipedia pages relating to video games, and as you might expect, it found that there is a very high probability that the terms \"video\" and \"game\" would appear on the same page.'
+		},
+		{ 			
+			name : 'Portfolio Website',
+			url : 'https://github.com/kmj22/portfolio-site',
+			date : 'Spring-Summer 2017',
+			description : 'This website was made using HTML, CSS, and JavaScript.  It was created as a way to visualize some of the work I have done at NJIT as well as in my spare time.'
+		},
+		{ 			
+			name : 'Used Car Lot Website',
+			url : 'https://github.com/kmj22/is218-website',
+			date : 'Fall 2016',
+			description : 'This site was created in PHP using an MVC design.  It was made for a web development course.  It allows you to register an account, view cars for sale, look at what cars a specific user is offering, and put your own cars up for sale.  The site can be viewed here: <a href="https://web.njit.edu/~kmj22/is218">https://web.njit.edu/~kmj22/is218</a>'
+		},		
+		{ 			
+			name : 'Polynomial Representation in Java',
+			url : 'https://github.com/kmj22/cs435project',
+			date : 'Spring 2016',
+			description : 'The XYPoly class was made with Java to represent polynomials of the form C*x^i*y^j + C2*x2^i2*y2^j2 + ...  This project implements a data structure to handle addition, subtraction, multiplication, powers, and evaluation of these polynomials.'
+		}];
+		
+		addProjects(projects);
+	</script>
 
 </body>
 </html>
