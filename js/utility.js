@@ -62,6 +62,7 @@ function addProjects(projects){
 	var projectContainer = document.getElementById('project-container');
 	
 	var row = document.createElement('div');
+	
 	row.setAttribute('class','row');
 	projectContainer.appendChild(row);
 	
@@ -74,18 +75,22 @@ function addProjects(projects){
 	for (var i = 0; i < projects.length; i++){
 		var project = projects[i];
 		
-		var html = "<h3><a href='" + project.url + "'>" + project.name + "</a></h3>";
+		var html = "<h3>" + project.name + "</h3>";
 		html += "<h4>" + project.date + "</h4>";
 		html += "<p>" + project.description + "</p>";
 			
 		var column = document.createElement('div');
 		column.setAttribute('class','col-sm-' + colWidth);
 		
-		var panel = document.createElement('div');
-		panel.setAttribute('class','panel project-panel'); 
-		panel.innerHTML = html;
+		var panelLink = document.createElement('a');
+		panelLink.setAttribute('href', project.url);
 		
-		column.appendChild(panel);
+		var panelContent = document.createElement('div');
+		panelContent.setAttribute('class','panel project-panel'); 
+		panelContent.innerHTML = html;
+		
+		column.appendChild(panelLink);
+		panelLink.appendChild(panelContent);
 		
 		if (projectsInRow >= projectsPerRow){
 			projectsInRow = 0;

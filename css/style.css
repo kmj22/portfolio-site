@@ -19,7 +19,12 @@ body{
 	overflow-y: auto;
 }
 
-h2, h3, .project-panel a, .project-panel a:visited{
+.project-panel:hover, .project-panel:visited{
+	background-color: #F2FCFC;	
+	text-decoration: none;
+}
+
+h2, h3{
 	color: #C4566A;
 }
 
@@ -33,6 +38,10 @@ h5{
 
 a, a:visited{
 	color: #34495E;
+}
+
+a:hover{
+	text-decoration: none;
 }
 
 .screenshots p{
